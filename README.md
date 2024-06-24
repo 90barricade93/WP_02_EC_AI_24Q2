@@ -6,12 +6,15 @@
 [![Latest Release](https://img.shields.io/badge/Latest%20Version-0.0.0-blue?logo=github)](https://github.com/90barricade93/ai-joke-generator/commits/main)
 ![Static Badge](https://img.shields.io/badge/Encode_Club-AI_Bootcamp_24Q2-silver)
 ![Static Badge](https://img.shields.io/badge/GROUP-09-gold)
+
 </div>
 
 # WP_02_EC_AI_24Q2-AI_Joke_Generator
+
 Weekend Project 02 - Encode Club AI BootCamp 24Q2 Repository
 
 ## Project Overview
+
 This project is part of the Encode Club AI BootCamp and involves creating a new application from scratch using Next.js, focusing on generating jokes using AI. The application will allow users to customize various joke parameters and generate jokes based on their preferences. Additionally, the AI will evaluate the generated jokes for humor, appropriateness, and potential offensiveness. The project leverages the Text Generation WebUI to serve text generation tasks.
 
 ## Features
@@ -26,6 +29,7 @@ This project is part of the Encode Club AI BootCamp and involves creating a new 
 - **Integration with Text Generation WebUI**: Serve text generation tasks using the WebUI.
 
 ## Project Members Group 9
+
 - [Emmanuel](https://github.com/codehouze)
 - [Alessio](https://github.com/AlessioChen)
 - [Jan-Christoph](https://github.com/jcklie)
@@ -49,44 +53,44 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the Repository**
 
-    ```bash
-    git clone https://github.com/90barricade93/ai-joke-generator
-    cd ai-joke-generator
-    ```
+   ```bash
+   git clone https://github.com/90barricade93/ai-joke-generator
+   cd ai-joke-generator
+   ```
 
 2. **Install Dependencies**
 
-    Using npm:
+   Using npm:
 
-    ```bash
-    npm install ai openai
-    ```
+   ```bash
+   npm install ai openai
+   ```
 
 3. **Set Up Environment Variables**
 
-    Create a `.env.local` file in the root directory and add a placeholder for your OpenAI API environment variables to prevent 
-    ```⨯ Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).```
+   Create a `.env.local` file in the root directory and add a placeholder for your OpenAI API environment variables to prevent
+   `⨯ Error: The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' }).`
 
-    ```env
-    OPENAI_API_KEY="placeholder"
-    ```
+   ```env
+   OPENAI_API_KEY="placeholder"
+   ```
 
 4. **Run the Development Server**
 
-    Using npm:
+   Using npm:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 5. **Run the Text Generation WebUI**
 
-    Follow the instructions in the Text Generation WebUI documentation to set up and run the WebUI on your local environment.
+   Follow the instructions in the Text Generation WebUI documentation to set up and run the WebUI on your local environment.
 
-    ```bash
-    cd /path/to/text-generation-webui
-    ./start_linux.sh -api
-    ```
+   ```bash
+   cd /path/to/text-generation-webui
+   ./start_linux.sh -api
+   ```
 
 ## Conclusion
 
@@ -95,12 +99,13 @@ This project demonstrates the integration of Next.js with AI capabilities, provi
 Feel free to contribute, suggest improvements, or ask questions. Happy coding!
 
 ### Acknowledgements
+
 We would like to thank the [Encode Club AI BootCamp](https://github.com/Encode-Club-AI-Bootcamp) for this opportunity and [@mpagani](https://github.com/MatheusDaros) for his guidance.
 
 <div align="center">
 
-![GitHub forks](https://img.shields.io/github/forks/90barricade93/ai-joke-generator) &ensp; © GROUP 9 - AI 24Q2 &ensp; ![GitHub stars](https://img.shields.io/github/stars/90barricade93/ai-joke-generator) 
+![GitHub forks](https://img.shields.io/github/forks/90barricade93/ai-joke-generator) &ensp; © GROUP 9 - AI 24Q2 &ensp; ![GitHub stars](https://img.shields.io/github/stars/90barricade93/ai-joke-generator)
 
 </div>
 
---------
+---
