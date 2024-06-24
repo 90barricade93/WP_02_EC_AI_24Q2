@@ -15,8 +15,8 @@ export async function POST(req: Request) {
     stream: true,
     messages: [
       {
-        role: "system",:
-        content: `You are a joke generator. Create a ${tone} joke about ${topic} in the style of a ${jokeType}.`,
+        role: "system",
+        content: `You are a joke generator. Create a ${tone} joke about ${topic} in the style of a ${type}.`,
       },
       ...messages,
     ],
