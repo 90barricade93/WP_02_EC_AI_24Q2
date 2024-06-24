@@ -28,6 +28,8 @@ import {
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import * as React from 'react';
+import Image from 'next/image';
 
 export function JokeGenerator() {
   const [topic, setTopic] = useState('');
@@ -117,7 +119,7 @@ export function JokeGenerator() {
     <div className="flex flex-col items-center justify-center h-screen bg-gray-800 dark:bg-gray-800">
       <div className="bg-gray-800 dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-4xl flex flex-col items-center">
         <div className="relative w-full max-w-[1200px]">
-          <img
+          <Image
             src="Banner-1200x200.jpg"
             alt="AI Joke Generator"
             width={1200}
@@ -283,7 +285,7 @@ export function JokeGenerator() {
               </div>
             ) : (
               <div className="text-gray-200 dark:text-gray-200 text-center w-full">
-                <p>Click "Generate Joke" to see the result.</p>
+                <p>Click &quot;Generate Joke&quot; to see the result.</p>
               </div>
             )}
           </div>
@@ -296,7 +298,7 @@ export function JokeGenerator() {
   );
 }
 
-function CheckIcon(props) {
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -315,7 +317,7 @@ function CheckIcon(props) {
   );
 }
 
-function ChevronDownIcon(props) {
+function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -334,7 +336,7 @@ function ChevronDownIcon(props) {
   );
 }
 
-function ThumbsDownIcon(props) {
+function ThumbsDownIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -354,7 +356,7 @@ function ThumbsDownIcon(props) {
   );
 }
 
-function ThumbsUpIcon(props) {
+function ThumbsUpIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
