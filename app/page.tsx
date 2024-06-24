@@ -1,9 +1,13 @@
-import Head from 'next/head';
+"use client";
 
+import Head from 'next/head';
+import { useState } from 'react';
+import { JokeGenerator } from '@/components/joke-generator'; 
+import { useChat } from "ai/react";
 function ComingSoonPage() {
   return (
     <div className="h-screen w-screen bg-black text-white flex justify-center items-center">
-      <h1 className="text-6xl font-bold">Coming Soon</h1>
+      <JokeGenerator />
     </div>
   );
 }

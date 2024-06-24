@@ -112,7 +112,7 @@ export function JokeGenerator() {
       <div className="bg-gray-800 dark:bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-4xl flex flex-col items-center">
         <div className="relative w-full max-w-[1200px]">
           <img
-            src="/placeholder.svg"
+            src="/Banner-1200x200.jpg"
             alt="AI Joke Generator"
             width={1200}
             height={200}

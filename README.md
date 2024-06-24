@@ -85,7 +85,7 @@ Before you begin, ensure you have the following installed:
 
     ```bash
     cd /path/to/text-generation-webui
-    ./start_linux.sh
+    ./start_linux.sh -api
     ```
 
 ## Conclusion
