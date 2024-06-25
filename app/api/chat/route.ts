@@ -8,7 +8,7 @@ const openai = new OpenAI({
 export const runtime = 'edge';
 
 export async function POST(req: Request) {
-  const { messages } = await req.json();
+  const { messages, setTopic, setTone, setTemperature } = await req.json();
 
   const response = await openai.chat.completions.create({
     model: 'gpt-3.5-turbo',
@@ -16,9 +16,8 @@ export async function POST(req: Request) {
     messages: [
       {
         role: 'system',
-        content: `You are a joke generator. Create a ${tone} joke about ${topic} in the style of a ${type}.`,
+        content: `Please generate a ${setTopic} topiced joke with a ${setTone} tone. Make it ${setTemperature}. Take a deep breath and let your mind wander. The stage is yours.`,
       },
-      ...messages,
     ],
   });
 

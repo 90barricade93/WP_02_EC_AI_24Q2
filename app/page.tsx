@@ -4,12 +4,15 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { JokeGenerator } from '@/components/joke-generator';
 import { useChat } from 'ai/react';
-function JokePage() {
+
+export default function Chat() {
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
+
   return (
-    <div className="h-screen w-screen bg-black text-white flex justify-center items-center">
-      <JokeGenerator />
-    </div>
+    <main className="mx-auto w-full h-screen p-24 flex flex-col">
+      <div className="p-4 m-4">
+        <JokeGenerator />
+      </div>
+    </main>
   );
 }
-
-export default JokePage;

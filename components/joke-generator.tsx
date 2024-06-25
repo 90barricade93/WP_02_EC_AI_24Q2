@@ -97,12 +97,12 @@ export function JokeGenerator() {
   const typeOptions = ['One-liner', 'Question', 'Pun', 'Knock-Knock', 'Story', 'Conversation'];
   const generateJoke = async () => {
     try {
-      const response = await fetch('YOUR_API_URL', {
+      const response = await fetch('api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ topic, tone, type, temperature }),
+        body: JSON.stringify({ setTopic, setTone, setTemperature }),
       });
       const data = await response.json();
       setJoke(data.joke);
@@ -374,4 +374,57 @@ function ThumbsUpIcon(props: React.SVGProps<SVGSVGElement>) {
       <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
     </svg>
   );
+}
+
+function GenerateJoke(params: { setTopic: string; setTone: string; setTemperature: number }) {
+  const [prompt, setPrompt] = useState('');
+
+  if (!params.setTopic || !params.setTone || !params.setTemperature) return <button disabled>Generate Joke Prompt</button>;
+
+  if (!prompt)
+    return (
+      <div className="p-4 m-4 max-w-lg text-center mx-auto">
+        <section className="mb-auto m">
+          {messages.map((m) => (
+            <div className="mb-4" key={m.id}>
+              {m.role === 'user' ? 'User: ' : 'AI: '}
+              {m.content}
+            </div>
+          ))}
+        </section>
+      </div>
+    );
+
+  return (
+    <div className="space-y-4 bg-opacity-25 bg-gray-700 rounded-lg p-4 text-center">
+      <h3 className="text-xl font-semibold">Generated Joke</h3>
+      <Textarea className="min-h-[100px]" id="joke-output" placeholder={prompt} />
+      <Button
+        className="bg-gray-900 text-white mx-auto"
+        size="sm"
+        variant="outline"
+        onClick={() => {
+          navigator.clipboard.writeText(prompt);
+        }}
+      >
+        Copy to clipboard
+      </Button>
+      <Button
+        className="bg-gray-900 text-white mx-auto"
+        size="sm"
+        variant="outline"
+        onClick={() => {
+          setPrompt('');
+        }}
+      >
+        Retry
+      </Button>
+    </div>
+  );
+}
+
+function calculatePrompt(params: { setTopic: string; setTone: string; setTemperature: number }): string {
+  return `Please generate a ${params.setTopic} topiced joke with a ${params.setTone} tone. Make it ${
+    params.setTemperature
+  }. Take a deep breath and let your mind wander. The stage is yours.`;
 }
