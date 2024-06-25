@@ -31,6 +31,8 @@ import { Button } from '@/components/ui/button';
 import * as React from 'react';
 import Image from 'next/image';
 import { TextArea } from '@/components/ui/textarea';
+import { useChat } from 'ai/react';
+import StreamingTextResponse from 'openai';
 
 export function JokeGenerator() {
   const [topic, setTopic] = useState('');
@@ -41,6 +43,7 @@ export function JokeGenerator() {
   const [funniness, setFunniness] = useState(0);
   const [appropriateness, setAppropriateness] = useState(0);
   const [offensiveness, setOffensiveness] = useState(0);
+  const [response, setResponse] = useState('');
   const toneOptions = [
     'Witty',
     'Sarcastic',
@@ -106,6 +109,7 @@ export function JokeGenerator() {
         body: JSON.stringify({ setTopic, setTone, setTemperature }),
       });
       const data = await response.json();
+      console.log(data.joke);
       setJoke(data.joke);
     } catch (error) {
       console.error('Error generating joke:', error);
@@ -219,7 +223,7 @@ export function JokeGenerator() {
                     {typeOptions.map((option) => (
                       <DropdownMenuItem
                         key={option}
-                        onClick={() => setType(option.toLowerCase())}
+                        onClick={() => setType(option)}
                         className={`flex items-center justify-between px-4 py-2 hover:bg-gray-600 dark:hover:bg-gray-600 ${
                           type === option.toLowerCase() ? 'bg-gray-600 dark:bg-gray-600' : ''
                         }`}
@@ -285,11 +289,9 @@ export function JokeGenerator() {
                 </div>
               </div>
             ) : (
-              <TextArea
-                className="w-full bg-background dark:bg-background text-white font-robotico"
-                defaultValue={"Click 'Generate Joke' to see the result."}
-                readOnly={true}
-              />
+              <TextArea className="w-full bg-background dark:bg-background text-white font-robotico" readOnly={true} rows={20}>
+                {joke ? <p>{joke}</p> : "Click 'Generate Joke' to see the result."}
+              </TextArea>
             )}
           </div>
         </div>
