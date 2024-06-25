@@ -30,6 +30,7 @@ import {
 import { Button } from '@/components/ui/button';
 import * as React from 'react';
 import Image from 'next/image';
+import { TextArea } from '@/components/ui/textarea';
 
 export function JokeGenerator() {
   const [topic, setTopic] = useState('');
@@ -139,7 +140,7 @@ export function JokeGenerator() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="ghost"
+                    variant="primary"
                     size="icon"
                     className="w-full flex items-center justify-between rounded-md bg-gray-700 dark:bg-gray-700 text-gray-200 dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600"
                   >
@@ -172,7 +173,7 @@ export function JokeGenerator() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="ghost"
+                    variant="primary"
                     size="icon"
                     className="w-full flex items-center justify-between rounded-md bg-gray-700 dark:bg-gray-700 text-gray-200 dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600"
                   >
@@ -205,7 +206,7 @@ export function JokeGenerator() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="ghost"
+                    variant="primary"
                     size="icon"
                     className="w-full flex items-center justify-between rounded-md bg-gray-700 dark:bg-gray-700 text-gray-200 dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600"
                   >
@@ -284,9 +285,11 @@ export function JokeGenerator() {
                 </div>
               </div>
             ) : (
-              <div className="text-gray-200 dark:text-gray-200 text-center w-full">
-                <p>Click &quot;Generate Joke&quot; to see the result.</p>
-              </div>
+              <TextArea
+                className="w-full bg-background dark:bg-background text-white font-robotico"
+                defaultValue={"Click 'Generate Joke' to see the result."}
+                readOnly={true}
+              />
             )}
           </div>
         </div>
