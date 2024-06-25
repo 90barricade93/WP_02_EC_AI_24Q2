@@ -140,7 +140,7 @@ export function JokeGenerator() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="primary"
+                    variant="default"
                     size="icon"
                     className="w-full flex items-center justify-between rounded-md bg-gray-700 dark:bg-gray-700 text-gray-200 dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600"
                   >
@@ -173,7 +173,7 @@ export function JokeGenerator() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="primary"
+                    variant="default"
                     size="icon"
                     className="w-full flex items-center justify-between rounded-md bg-gray-700 dark:bg-gray-700 text-gray-200 dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600"
                   >
@@ -206,7 +206,7 @@ export function JokeGenerator() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
-                    variant="primary"
+                    variant="default"
                     size="icon"
                     className="w-full flex items-center justify-between rounded-md bg-gray-700 dark:bg-gray-700 text-gray-200 dark:text-gray-200 hover:bg-gray-600 dark:hover:bg-gray-600"
                   >
